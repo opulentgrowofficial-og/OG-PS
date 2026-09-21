@@ -1,18 +1,10 @@
+# The whole site is open to crawlers, including AI answer engines.
+# The FAQ and capability pages are written to be quotable, and being
+# cited in an AI answer is the point. Named per-bot rules are omitted
+# deliberately: the wildcard below already permits every crawler, and
+# the AI opt-outs are all opt-out rather than opt-in.
+
 User-agent: *
-Allow: /
-
-# AI answer engines are allowed. The FAQ and capability pages are written
-# to be quotable, and citation is the point.
-User-agent: GPTBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.propelsaga.com/sitemap.xml
