@@ -219,7 +219,7 @@ export default function Navbar({ onOpenForm }: NavbarProps) {
                           </span>
                           <ChevronDown
                             aria-hidden
-                            className={`h-5 w-5 text-white/40 transition-transform duration-300 ease-premium ${
+                            className={`h-5 w-5 text-white/55 transition-transform duration-300 ease-premium ${
                               expanded ? "rotate-180" : ""
                             }`}
                           />
@@ -267,7 +267,7 @@ export default function Navbar({ onOpenForm }: NavbarProps) {
 
             <a
               href="mailto:info@propelsaga.com"
-              className="mt-6 block text-[0.9375rem] text-white/50 transition-colors hover:text-bone"
+              className="mt-6 block text-[0.9375rem] text-white/55 transition-colors hover:text-bone"
             >
               info@propelsaga.com
             </a>

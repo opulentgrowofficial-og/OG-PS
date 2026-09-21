@@ -74,7 +74,10 @@ export default function Tagline() {
               <span key={`${word}-${i}`} aria-hidden>
                 <span
                   style={{
-                    color: `hsl(var(--ink) / ${0.22 + lit * 0.78})`,
+                    // The unlit floor stays at 32% rather than going fainter.
+                    // Below roughly a third the word stops being legible at
+                    // all, and a visitor who lands mid section sees nothing.
+                    color: `hsl(var(--ink) / ${0.32 + lit * 0.68})`,
                     transition: "color 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
                   }}
                 >

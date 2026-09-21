@@ -62,6 +62,7 @@ export default {
         oxide: {
           DEFAULT: "hsl(var(--oxide))",
           deep: "hsl(var(--oxide-deep))",
+          lift: "hsl(var(--oxide-lift))",
         },
         rule: {
           DEFAULT: "hsl(var(--rule))",

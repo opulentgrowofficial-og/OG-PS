@@ -39,7 +39,7 @@ export default function Method() {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
               <div className="reveal border-t border-white/15 pt-4">
-                <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-white/45">
+                <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-white/55">
                   03 / Method
                 </span>
               </div>
@@ -56,7 +56,7 @@ export default function Method() {
 
               <a
                 href="/about"
-                className="reveal reveal-d3 mt-8 inline-flex min-h-[44px] items-center border-b border-white/25 pb-2 text-[0.9375rem] font-medium text-bone transition-colors duration-300 ease-premium hover:border-oxide hover:text-oxide"
+                className="reveal reveal-d3 mt-8 inline-flex min-h-[44px] items-center border-b border-white/25 pb-2 text-[0.9375rem] font-medium text-bone transition-colors duration-300 ease-premium hover:border-oxide-lift hover:text-oxide-lift"
               >
                 How we are set up
               </a>
@@ -71,10 +71,10 @@ export default function Method() {
                   className="reveal border-b border-white/15 py-10 sm:py-12 lg:py-14"
                 >
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
-                    <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-oxide">
+                    <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-oxide-lift">
                       Phase {phase.index}
                     </span>
-                    <span className="ledger-label text-white/40">{phase.name}</span>
+                    <span className="ledger-label text-white/55">{phase.name}</span>
                   </div>
 
                   <h3 className="mt-5 max-w-[22ch] font-display text-[1.625rem] font-light leading-[1.15] text-bone sm:text-[2rem] lg:text-[2.25rem]">
@@ -85,8 +85,8 @@ export default function Method() {
                     {phase.body}
                   </p>
 
-                  <p className="mt-6 flex items-center gap-3 text-[0.8125rem] text-white/45">
-                    <span aria-hidden className="h-px w-8 bg-oxide" />
+                  <p className="mt-6 flex items-center gap-3 text-[0.8125rem] text-white/55">
+                    <span aria-hidden className="h-px w-8 bg-oxide-lift" />
                     {phase.reading}
                   </p>
                 </li>

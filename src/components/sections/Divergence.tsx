@@ -78,7 +78,7 @@ export default function Divergence() {
             >
               {/* Problem, on ink */}
               <div className="bg-ink p-7 sm:p-9 lg:col-span-5 lg:p-10">
-                <p className="ledger-label text-white/40">
+                <p className="ledger-label text-white/55">
                   {block.index} · Industry standard
                 </p>
                 <h3 className="mt-5 font-display text-[1.5rem] font-light leading-tight text-bone sm:text-[1.875rem]">

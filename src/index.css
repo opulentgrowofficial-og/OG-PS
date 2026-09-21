@@ -19,9 +19,13 @@
     --bone-deep: 40 22% 90%;     /* #E9E4DA  recessed paper */
     --ink: 210 27% 8%;           /* #0E141B  near-black navy, 30% */
     --ink-soft: 212 16% 30%;     /* #41495A  secondary text on bone */
-    --ink-mute: 213 10% 47%;     /* #6E7681  tertiary text */
+    --ink-mute: 213 12% 40%;     /* #5A6572  tertiary text. 4.8:1 on bone-deep, the
+                                    darkest surface it sits on, so it clears AA at 11px */
     --oxide: 14 60% 41%;         /* #A8462A  single accent, <=10% */
     --oxide-deep: 14 62% 33%;    /* #86381F  accent pressed */
+    --oxide-lift: 14 65% 52%;    /* #D45A35  the accent ON ink only. The base oxide
+                                    reads 3.2:1 against ink, which fails AA at label
+                                    sizes. Never use this one on bone. */
     --rule: 40 16% 84%;          /* #DCD7CC  hairline on bone */
     --rule-ink: 210 20% 20%;     /* hairline on ink */
     --surface: 42 40% 97%;       /* #FBF9F5  card on bone */

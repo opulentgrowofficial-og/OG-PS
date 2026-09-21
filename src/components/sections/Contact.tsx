@@ -32,7 +32,7 @@ export default function Contact({ formOpen, setFormOpen }: ContactProps) {
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <div className="reveal border-t border-white/15 pt-4">
-                <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-white/45">
+                <span className="tabular text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-white/55">
                   08 / Start here
                 </span>
               </div>
@@ -41,7 +41,7 @@ export default function Contact({ formOpen, setFormOpen }: ContactProps) {
                 Tell us where it stands.
               </h2>
 
-              <p className="reveal reveal-d2 measure mt-7 text-[1.0625rem] leading-[1.7] text-white/60">
+              <p className="reveal reveal-d2 measure mt-7 text-[1.0625rem] leading-[1.7] text-white/70">
                 Thirty minutes with a practice lead who has delivered your
                 module in your industry. You leave with a written view of what
                 is in front of you, whether or not you work with us.
@@ -70,12 +70,12 @@ export default function Contact({ formOpen, setFormOpen }: ContactProps) {
                   ["No obligation", "No sales sequence follows the call", null],
                 ].map(([label, value, href]) => (
                   <div key={label as string} className="border-b border-white/15 py-5">
-                    <dt className="ledger-label text-white/40">{label}</dt>
+                    <dt className="ledger-label text-white/55">{label}</dt>
                     <dd className="mt-2 text-[1rem] text-bone">
                       {href ? (
                         <a
                           href={href as string}
-                          className="-my-2 inline-flex min-h-[44px] items-center transition-colors duration-300 hover:text-oxide"
+                          className="-my-2 inline-flex min-h-[44px] items-center transition-colors duration-300 hover:text-oxide-lift"
                         >
                           {value}
                         </a>

@@ -34,7 +34,7 @@ export default function SectionHead({
       >
         <span
           className={`tabular text-[0.6875rem] uppercase tracking-[0.18em] font-medium ${
-            onInk ? "text-white/45" : "text-ink-mute"
+            onInk ? "text-white/55" : "text-ink-mute"
           }`}
         >
           {index}
@@ -54,7 +54,7 @@ export default function SectionHead({
       {lede ? (
         <p
           className={`reveal reveal-d2 measure mt-6 text-[1.0625rem] leading-[1.65] ${
-            onInk ? "text-white/60" : "text-ink-soft"
+            onInk ? "text-white/70" : "text-ink-soft"
           }`}
         >
           {lede}
