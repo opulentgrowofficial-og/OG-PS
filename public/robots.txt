@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# AI answer engines are allowed. The FAQ and capability pages are written
+# to be quotable, and citation is the point.
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.propelsaga.com/sitemap.xml

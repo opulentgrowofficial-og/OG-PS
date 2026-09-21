@@ -1,0 +1,195 @@
+/* PropelSaga build stamp
+   direction: Refined Editorial | mood: premium-editorial
+   variance 7 · motion 5 · density 3
+   display Newsreader (Tiempos Headline sub) / body Instrument Sans (Söhne sub)
+   palette "Ledger": bone #F4F1EA · ink #0E141B · oxide #A8462A
+   contrast: ink/bone 15.9:1 · oxide/bone 5.4:1 · bone/ink 15.9:1 · bone/oxide 4.9:1
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- Ledger palette (HSL triplets for shadcn token system) ---- */
+    --bone: 41 30% 94%;          /* #F4F1EA  warm paper, dominant 60% */
+    --bone-deep: 40 22% 90%;     /* #E9E4DA  recessed paper */
+    --ink: 210 27% 8%;           /* #0E141B  near-black navy, 30% */
+    --ink-soft: 212 16% 30%;     /* #41495A  secondary text on bone */
+    --ink-mute: 213 10% 47%;     /* #6E7681  tertiary text */
+    --oxide: 14 60% 41%;         /* #A8462A  single accent, <=10% */
+    --oxide-deep: 14 62% 33%;    /* #86381F  accent pressed */
+    --rule: 40 16% 84%;          /* #DCD7CC  hairline on bone */
+    --rule-ink: 210 20% 20%;     /* hairline on ink */
+    --surface: 42 40% 97%;       /* #FBF9F5  card on bone */
+
+    /* ---- shadcn token map ---- */
+    --background: var(--bone);
+    --foreground: var(--ink);
+    --card: var(--surface);
+    --card-foreground: var(--ink);
+    --popover: var(--surface);
+    --popover-foreground: var(--ink);
+    --primary: var(--ink);
+    --primary-foreground: var(--bone);
+    --secondary: var(--oxide);
+    --secondary-foreground: 42 40% 97%;
+    --muted: var(--bone-deep);
+    --muted-foreground: var(--ink-mute);
+    --accent: var(--bone-deep);
+    --accent-foreground: var(--ink);
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 42 40% 97%;
+    --border: var(--rule);
+    --input: var(--rule);
+    --ring: var(--oxide);
+
+    /* ---- One radius, one shadow, one border ---- */
+    --radius: 0.25rem;
+    --shadow-lift: 0 1px 2px hsl(210 27% 8% / 0.04), 0 8px 24px -12px hsl(210 27% 8% / 0.10);
+
+    /* ---- Motion tokens ---- */
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-variant-numeric: tabular-nums;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Newsreader', ui-serif, Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Tabular figures everywhere a number is a fact, not decoration */
+  .tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+  }
+
+  ::selection {
+    background: hsl(var(--oxide) / 0.16);
+    color: hsl(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--oxide));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Ledger label: the metadata voice used site-wide.
+     Body sans, small, uppercase, wide tracking. Never a decorative pill. */
+  .ledger-label {
+    @apply text-[0.6875rem] uppercase tracking-[0.18em] font-medium text-ink-mute;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rule-t {
+    @apply border-t border-border;
+  }
+
+  /* Editorial container: 12-col grid, generous margins */
+  .shell {
+    @apply mx-auto w-full max-w-[82rem] px-6 sm:px-10 lg:px-16;
+  }
+
+  .measure {
+    max-width: 68ch;
+  }
+}
+
+@layer utilities {
+  .text-ink-soft { color: hsl(var(--ink-soft)); }
+  .text-ink-mute { color: hsl(var(--ink-mute)); }
+
+  /* Scroll reveal: one system, gated on reduced motion */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s var(--ease-premium),
+      transform 0.7s var(--ease-premium);
+  }
+  .reveal.shown {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-d1 { transition-delay: 0.08s; }
+  .reveal-d2 { transition-delay: 0.16s; }
+  .reveal-d3 { transition-delay: 0.24s; }
+  .reveal-d4 { transition-delay: 0.32s; }
+
+  /* Masked line reveal for display type */
+  .line-mask {
+    display: block;
+    overflow: hidden;
+  }
+  .line-mask > span {
+    display: block;
+    transform: translateY(105%);
+    transition: transform 0.9s var(--ease-expo);
+  }
+  .shown .line-mask > span,
+  .line-mask.shown > span {
+    transform: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Paper grain at 2.5%, the only texture on the site */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal,
+  .line-mask > span {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
